@@ -1,9 +1,0 @@
-shopsys_framework:
-    admin:
-        menu:
-            items:
-                import_logs:
-                    label: 'Import Logs'
-                    route: 'admin_importlog_list'
-                    icon: 'list'
-                    position: 1000

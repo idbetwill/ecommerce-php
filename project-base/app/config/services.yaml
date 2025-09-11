@@ -521,10 +521,3 @@ services:
                 'Shopsys\FrameworkBundle\Form\Constraints\UniqueEmailValidator': Shopsys\FrameworkBundle\Form\Constraints\UniqueEmailValidator
             }
         class: 'App\Component\Validator\ContainerConstraintValidatorFactory'
-
-    # Import Log Services
-    App\Grid\ImportLog\ImportLogGridFactory: ~
-    App\Grid\ImportLog\ImportLogGridInlineEdit: ~
-    App\Model\ImportLog\ImportLogDataFactory: ~
-    App\Model\ImportLog\ImportLogFacade: ~
-    App\Model\ImportLog\ImportLogRepository: ~
