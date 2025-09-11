@@ -1,0 +1,25 @@
+fragment ListedStoreFragment on Store {
+    __typename
+    slug
+    identifier: uuid
+    name
+    description
+    openingHours {
+        ...OpeningHoursFragment
+    }
+    latitude
+    longitude
+    street
+    postcode
+    city
+    distance
+    email
+    phone
+    specialMessage
+    country {
+        ...CountryFragment
+    }
+    mainImage {
+        ...ImageFragment
+    }
+}

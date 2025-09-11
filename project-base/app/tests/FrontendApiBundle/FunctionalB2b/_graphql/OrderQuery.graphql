@@ -1,0 +1,9 @@
+query OrderQuery ($orderUuid: Uuid!) {
+    order (uuid: $orderUuid) {
+        uuid
+        email
+        customerUser {
+            email
+        }
+    }
+}

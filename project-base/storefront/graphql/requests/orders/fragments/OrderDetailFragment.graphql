@@ -1,0 +1,71 @@
+fragment OrderDetailFragment on Order {
+    __typename
+    uuid
+    number
+    creationDate
+    items {
+        ...OrderDetailItemFragment
+    }
+    transport {
+        __typename
+        name
+        price {
+            ...PriceFragment
+        }
+        mainImage {
+            url
+        }
+        isPersonalPickup
+        transportTypeCode
+    }
+    payment {
+        __typename
+        name
+        type
+        price {
+            ...PriceFragment
+        }
+        mainImage {
+            url
+        }
+    }
+    status
+    firstName
+    lastName
+    email
+    telephone
+    companyName
+    companyNumber
+    companyTaxNumber
+    street
+    city
+    postcode
+    country {
+        __typename
+        name
+    }
+    isDeliveryAddressDifferentFromBilling
+    deliveryFirstName
+    deliveryLastName
+    deliveryCompanyName
+    deliveryTelephone
+    deliveryStreet
+    deliveryCity
+    deliveryPostcode
+    deliveryCountry {
+        __typename
+        name
+    }
+    note
+    urlHash
+    promoCode
+    trackingNumber
+    trackingUrl
+    totalPrice {
+        ...PriceFragment
+    }
+    isPaid
+    hasExternalPayment
+    hasPaymentInProcess
+    lastExternalPaymentUrl
+}

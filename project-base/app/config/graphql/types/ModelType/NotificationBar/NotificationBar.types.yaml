@@ -1,0 +1,4 @@
+NotificationBar:
+    type: object
+    inherits:
+        - 'NotificationBarDecorator'

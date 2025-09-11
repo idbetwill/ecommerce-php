@@ -1,0 +1,10 @@
+fragment ColumnCategoryFragment on Category {
+    __typename
+    uuid
+    name
+    slug
+    mainImage {
+        ...ImageFragment
+    }
+    ...NavigationSubCategoriesLinkFragment
+}

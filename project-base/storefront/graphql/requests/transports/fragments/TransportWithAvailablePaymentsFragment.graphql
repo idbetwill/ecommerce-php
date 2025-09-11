@@ -1,0 +1,19 @@
+fragment TransportWithAvailablePaymentsFragment on Transport {
+    __typename
+    uuid
+    name
+    description
+    price {
+        ...PriceFragment
+    }
+    mainImage {
+        ...ImageFragment
+    }
+    payments {
+        ...SimplePaymentFragment
+    }
+    daysUntilDelivery
+    transportTypeCode
+    isPersonalPickup
+    vatPercent
+}

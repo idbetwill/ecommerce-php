@@ -1,0 +1,29 @@
+query PaymentsQuery {
+    payments {
+        name,
+        description,
+        instructions,
+        position,
+        type,
+        price {
+            priceWithVat
+            priceWithoutVat
+            vatAmount
+        },
+        images {
+            url
+            name
+        }
+        transports {
+            name
+        }
+        goPayPaymentMethod {
+            identifier
+            name
+            imageNormalUrl
+            imageLargeUrl
+            paymentGroup
+        }
+        vatPercent
+    }
+}

@@ -1,0 +1,4 @@
+ArticleInterface:
+    type: interface
+    inherits:
+        - 'ArticleInterfaceDecorator'

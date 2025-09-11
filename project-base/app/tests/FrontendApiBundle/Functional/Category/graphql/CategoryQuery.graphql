@@ -1,0 +1,40 @@
+query CategoryQuery ($categoryUuid: Uuid, $firstProducts: Int! = 0) {
+    category(uuid: $categoryUuid) {
+        name
+        description
+        slug
+        seoH1
+        seoTitle
+        seoMetaDescription
+        bestsellers {
+            name
+        }
+        breadcrumb {
+            name
+            slug
+        }
+        readyCategorySeoMixLinks {
+            name
+            slug
+        }
+        uuid
+        children {
+            name
+        }
+        parent {
+            name
+        }
+        products(first: $firstProducts) {
+            edges {
+                node {
+                    name
+                }
+            }
+        }
+        images {
+            url
+            name
+        }
+        automatedFilters
+    }
+}

@@ -1,0 +1,4 @@
+ChangePaymentInCartInput:
+    type: input-object
+    inherits:
+        - 'ChangePaymentInCartInputDecorator'

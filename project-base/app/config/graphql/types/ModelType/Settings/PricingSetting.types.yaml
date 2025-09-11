@@ -1,0 +1,4 @@
+PricingSetting:
+    type: object
+    inherits:
+        - 'PricingSettingDecorator'

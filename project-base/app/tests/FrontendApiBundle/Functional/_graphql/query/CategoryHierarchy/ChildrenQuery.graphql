@@ -1,0 +1,12 @@
+query ChildrenQuery {
+    categories {
+        children {
+            name
+            categoryHierarchy {
+                id
+                name
+                uuid
+            }
+        }
+    }
+}

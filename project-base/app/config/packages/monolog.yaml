@@ -1,0 +1,51 @@
+parameters:
+    shopsys.monolog.formatter: "monolog.formatter.line"
+    shopsys.monolog.log_level: !php/const \Monolog\Logger::NOTICE
+    shopsys.monolog.cron_level: !php/const \Monolog\Logger::DEBUG
+
+when@prod:
+    parameters:
+        shopsys.monolog.formatter: "monolog.formatter.json"
+        shopsys.monolog.cron_level: !php/const \Monolog\Logger::INFO
+
+monolog:
+    channels:
+        - cron
+        - queue
+        - deprecation
+    handlers:
+        deprecated:
+            type: "null"
+            channels: [ "deprecation" ]
+        console:
+            type: console
+            verbosity_levels:
+                VERBOSITY_NORMAL: !php/const \Monolog\Logger::INFO
+                VERBOSITY_VERBOSE: !php/const \Monolog\Logger::DEBUG
+                VERBOSITY_VERY_VERBOSE: !php/const \Monolog\Logger::DEBUG
+                VERBOSITY_DEBUG: !php/const \Monolog\Logger::DEBUG
+            channels: [ "cron", "queue" ]
+        # Register the breadcrumb handler as a Monolog handler
+        sentry_breadcrumbs:
+            type: service
+            name: sentry_breadcrumbs
+            id: Sentry\Monolog\BreadcrumbHandler
+        # Register the handler as a Monolog handler to capture messages as events
+        sentry:
+            type: sentry
+            level: !php/const \Monolog\Logger::ERROR # Configures the level of messages to capture as events
+            hub_id: Sentry\State\HubInterface
+            fill_extra_context: true # Enables sending monolog context to Sentry
+            process_psr_3_messages: false
+        jobs_output:
+            type: stream
+            level: '%shopsys.monolog.cron_level%'
+            formatter: "%shopsys.monolog.formatter%"
+            path: "%shopsys.log_stream%"
+            bubble: false
+            channels: [ "cron", "queue" ]
+        main:
+            type: stream
+            level: '%shopsys.monolog.log_level%'
+            formatter: "%shopsys.monolog.formatter%"
+            path: "%shopsys.log_stream%"

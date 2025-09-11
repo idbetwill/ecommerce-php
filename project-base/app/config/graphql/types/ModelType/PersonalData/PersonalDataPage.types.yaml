@@ -1,0 +1,4 @@
+PersonalDataPage:
+    type: object
+    inherits:
+        - 'PersonalDataPageDecorator'

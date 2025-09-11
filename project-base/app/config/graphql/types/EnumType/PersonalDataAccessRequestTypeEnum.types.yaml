@@ -1,0 +1,4 @@
+PersonalDataAccessRequestTypeEnum:
+    type: enum
+    inherits:
+        - 'PersonalDataAccessRequestTypeEnumDecorator'

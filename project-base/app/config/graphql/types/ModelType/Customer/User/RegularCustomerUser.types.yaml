@@ -1,0 +1,4 @@
+RegularCustomerUser:
+    type: object
+    inherits:
+        - 'RegularCustomerUserDecorator'

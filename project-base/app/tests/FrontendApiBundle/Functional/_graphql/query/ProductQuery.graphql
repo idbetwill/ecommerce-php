@@ -1,0 +1,69 @@
+query Product($uuid: Uuid) {
+    product(uuid: $uuid) {
+        name
+        slug
+        shortDescription
+        seoH1
+        seoTitle
+        seoMetaDescription
+        link
+        unit {
+            name
+        }
+        availability {
+            name
+            status
+        }
+        stockQuantity
+        categories {
+            name
+        }
+        flags {
+            name
+            rgbColor
+        }
+        price {
+            priceWithVat
+            priceWithoutVat
+            vatAmount
+        }
+        brand {
+            name
+        }
+        accessories {
+            name
+        }
+        isSellingDenied
+        description
+        orderingPriority
+        parameters {
+            name
+            group
+            unit {
+                name
+            }
+            values {
+                text
+            }
+        }
+        namePrefix
+        nameSuffix
+        fullName
+        catalogNumber
+        partNumber
+        ean
+        usps
+        storeAvailabilities {
+            store {
+                name
+            }
+            availabilityInformation
+            availabilityStatus
+        }
+        availableStoresCount
+        breadcrumb {
+            name
+            slug
+        }
+    }
+}

@@ -1,0 +1,30 @@
+mutation ApplyPromoCodeToCart(
+    $cartUuid: Uuid
+    $promoCode: String!
+) {
+    ApplyPromoCodeToCart(input: {
+        cartUuid: $cartUuid
+        promoCode: $promoCode
+    }) {
+        uuid
+        promoCodes {
+            code
+            type
+        }
+        transport {
+            price {
+                priceWithVat
+                priceWithoutVat
+                vatAmount
+            }
+        }
+        payment {
+            price {
+                priceWithVat
+                priceWithoutVat
+                vatAmount
+            }
+        }
+        remainingAmountForFreeTransport
+    }
+}

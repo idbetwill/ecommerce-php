@@ -1,0 +1,9 @@
+fragment ProductDetailFragment on RegularProduct {
+    ...ProductDetailInterfaceFragment
+    shortDescription
+    usps
+    storeAvailabilities {
+        ...StoreAvailabilityFragment
+    }
+    availableStoresCount
+}

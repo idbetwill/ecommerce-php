@@ -1,0 +1,27 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Model\Administrator;
+
+use Shopsys\FrameworkBundle\Model\Administrator\AdministratorFacade as BaseAdministratorFacade;
+
+/**
+ * @method \App\Model\Administrator\Administrator create(\App\Model\Administrator\AdministratorData $administratorData)
+ * @method \App\Model\Administrator\Administrator edit(int $administratorId, \App\Model\Administrator\AdministratorData $administratorData)
+ * @method setPassword(\App\Model\Administrator\Administrator $administrator, string $password)
+ * @method checkForDelete(\App\Model\Administrator\Administrator $administrator)
+ * @method \App\Model\Administrator\Administrator getById(int $administratorId)
+ * @method setRolesChangedNow(\App\Model\Administrator\Administrator $administrator)
+ * @property \App\Model\Administrator\AdministratorRepository $administratorRepository
+ * @property \App\Model\Administrator\Role\AdministratorRoleFacade $administratorRoleFacade
+ * @method __construct(\Doctrine\ORM\EntityManagerInterface $em, \App\Model\Administrator\AdministratorRepository $administratorRepository, \Shopsys\FrameworkBundle\Model\Administrator\AdministratorFactory $administratorFactory, \App\Model\Administrator\Role\AdministratorRoleFacade $administratorRoleFacade, \Symfony\Component\PasswordHasher\Hasher\PasswordHasherFactoryInterface $passwordHasherFactory, \Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface $tokenStorage)
+ * @method setAdministratorTransferIssuesLastSeenDateTime(\App\Model\Administrator\Administrator $administrator)
+ * @method \App\Model\Administrator\Administrator|null findByUuid(string $uuid)
+ * @method \App\Model\Administrator\Administrator getCurrentlyLoggedAdministrator()
+ * @method \App\Model\Administrator\Administrator getByUserName(string $administratorUserName)
+ * @method \App\Model\Administrator\Administrator getByEmail(string $administratorEmail)
+ */
+class AdministratorFacade extends BaseAdministratorFacade
+{
+}

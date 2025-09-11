@@ -1,0 +1,144 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Tests\FrontendApiBundle\Functional\FriendlyUrl;
+
+use Shopsys\FrameworkBundle\Component\String\TransformStringHelper;
+use Shopsys\FrameworkBundle\Component\Translation\Translator;
+use Tests\FrontendApiBundle\Test\GraphQlTestCase;
+
+class FriendlyUrlTest extends GraphQlTestCase
+{
+    /**
+     * @inject
+     */
+    private TransformStringHelper $transformStringHelper;
+
+    public function testGetEntityNameByFriendlyUrl(): void
+    {
+        foreach ($this->getEntityNameByFriendlyUrlProvider() as $dataSet) {
+            $graphQlType = $dataSet['graphQlType'];
+            $urlSlug = $dataSet['urlSlug'];
+            $expectedName = $dataSet['expectedName'];
+
+            $query = $this->getQuery($graphQlType, $urlSlug);
+
+            $response = $this->getResponseContentForQuery($query);
+            $this->assertResponseContainsArrayOfDataForGraphQlType($response, $graphQlType);
+            $responseData = $this->getResponseDataForGraphQlType($response, $graphQlType);
+
+            $this->assertArrayHasKey('name', $responseData);
+            $this->assertSame($expectedName, $responseData['name']);
+        }
+    }
+
+    public function testFriendlyUrlNotFoundForRouteBySlug(): void
+    {
+        foreach ($this->getFriendlyUrlNotFoundForRouteBySlug() as $dataSet) {
+            $graphQlType = $dataSet['graphQlType'];
+            $urlSlug = $dataSet['urlSlug'];
+            $errorMessage = $dataSet['errorMessage'];
+
+            $query = $this->getQuery($graphQlType, $urlSlug);
+            $response = $this->getResponseContentForQuery($query);
+            $this->assertResponseContainsArrayOfErrors($response);
+            $errors = $this->getErrorsFromResponse($response);
+
+            $this->assertArrayHasKey(0, $errors);
+            $this->assertArrayHasKey('message', $errors[0]);
+            $this->assertSame($errorMessage, $errors[0]['message']);
+        }
+    }
+
+    /**
+     * @param string $graphQlType
+     * @param string $urlSlug
+     * @return string
+     */
+    private function getQuery(string $graphQlType, string $urlSlug): string
+    {
+        return '
+            query {
+                ' . $graphQlType . ' (urlSlug: "' . $urlSlug . '") {
+                    name
+                }
+            }
+        ';
+    }
+
+    /**
+     * @return array
+     */
+    private function getEntityNameByFriendlyUrlProvider(): array
+    {
+        $canonName = t('Canon', [], Translator::DATA_FIXTURES_TRANSLATION_DOMAIN, $this->getFirstDomainLocale());
+        $canonSlug = $this->transformStringHelper->stringToFriendlyUrlSlug($canonName);
+
+        $privacyPolicyName = t('Privacy policy', [], Translator::DATA_FIXTURES_TRANSLATION_DOMAIN, $this->getFirstDomainLocale());
+        $privacyPolicySlug = $this->transformStringHelper->stringToFriendlyUrlSlug($privacyPolicyName);
+
+        $electronicsName = t('Electronics', [], Translator::DATA_FIXTURES_TRANSLATION_DOMAIN, $this->getFirstDomainLocale());
+        $electronicsSlug = $this->transformStringHelper->stringToFriendlyUrlSlug($electronicsName);
+
+        $canonMg3550Name = t('Canon MG3550', [], Translator::DATA_FIXTURES_TRANSLATION_DOMAIN, $this->getFirstDomainLocale());
+        $canonMg3550Slug = $this->transformStringHelper->stringToFriendlyUrlSlug($canonMg3550Name);
+
+        return [
+            [
+                'graphQlType' => 'brand',
+                'urlSlug' => $canonSlug . '/',
+                'expectedName' => $canonName,
+            ],
+            [
+                'graphQlType' => 'brand',
+                'urlSlug' => $canonSlug,
+                'expectedName' => $canonName,
+            ],
+            [
+                'graphQlType' => 'article',
+                'urlSlug' => $privacyPolicySlug . '/',
+                'expectedName' => $privacyPolicyName,
+            ],
+            [
+                'graphQlType' => 'category',
+                'urlSlug' => $electronicsSlug . '/',
+                'expectedName' => $electronicsName,
+            ],
+            [
+                'graphQlType' => 'product',
+                'urlSlug' => $canonMg3550Slug . '/',
+                'expectedName' => $canonMg3550Name,
+            ],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    private function getFriendlyUrlNotFoundForRouteBySlug(): array
+    {
+        return [
+            [
+                'graphQlType' => 'brand',
+                'urlSlug' => 'canonNotExist/',
+                'errorMessage' => 'Brand with URL slug `canonNotExist/` does not exist.',
+            ],
+            [
+                'graphQlType' => 'article',
+                'urlSlug' => 'termsAndConditionsNotExist/',
+                'errorMessage' => 'Article with URL slug `termsAndConditionsNotExist/` does not exist.',
+            ],
+            [
+                'graphQlType' => 'category',
+                'urlSlug' => 'electronicsNotExist/',
+                'errorMessage' => 'Category with URL slug `electronicsNotExist/` does not exist.',
+            ],
+            [
+                'graphQlType' => 'product',
+                'urlSlug' => 'canon-mg3550NotExist/',
+                'errorMessage' => 'Product with URL slug `canon-mg3550NotExist/` does not exist.',
+            ],
+        ];
+    }
+}

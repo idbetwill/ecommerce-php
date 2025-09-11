@@ -1,0 +1,10 @@
+query SettingsQuery {
+    settings {
+        seo {
+            robotsTxtContent
+        }
+        termsAndConditionsArticleUrl
+        privacyPolicyArticleUrl
+        userConsentPolicyArticleUrl
+    }
+}

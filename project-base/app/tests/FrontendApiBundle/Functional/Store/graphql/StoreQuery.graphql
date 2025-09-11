@@ -1,0 +1,24 @@
+query StoreQuery($uuid: Uuid, $slug: String) {
+    store(uuid: $uuid, urlSlug: $slug) {
+        name
+        slug
+        isDefault
+        description
+        street
+        city
+        postcode
+        country {
+            code
+        }
+        specialMessage
+        phone
+        email
+        directions
+        latitude
+        longitude
+        breadcrumb {
+            name
+            slug
+        }
+    }
+}

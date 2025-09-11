@@ -1,0 +1,36 @@
+front_customer_uploaded_file_download:
+    defaults: { _controller: Shopsys\FrameworkBundle\Controller\Front\CustomerUploadedFileController::downloadAction }
+    methods: [GET]
+    path: /customer-file/download/{uploadedFileId}/{uploadedFilename}
+    requirements:
+        uploadedFileId: \d+
+
+front_customer_uploaded_file_view:
+    defaults: { _controller: Shopsys\FrameworkBundle\Controller\Front\CustomerUploadedFileController::viewAction }
+    methods: [GET]
+    path: /customer-file/view/{uploadedFileId}/{uploadedFilename}
+    requirements:
+        uploadedFileId: \d+
+
+front_download_uploaded_file:
+    defaults: { _controller: Shopsys\FrameworkBundle\Controller\Front\UploadedFileController::downloadAction }
+    methods: [GET]
+    path: /file/{uploadedFileId}/{uploadedFilename}
+    requirements:
+        uploadedFileId: \d+
+
+front_export_personal_data:
+    defaults:
+        _controller: Shopsys\FrameworkBundle\Controller\Front\PersonalDataController::exportXmlAction
+        type: ~
+    path: /personal-overview-export/xml/{hash}
+
+front_homepage:
+    path: /
+
+front_social_network_login:
+    defaults: { _controller: Shopsys\FrontendApiBundle\Controller\SocialNetworkController::loginAction }
+    path: /social-network/login/{type}
+
+front_social_network_login_page:
+    path: /social-login

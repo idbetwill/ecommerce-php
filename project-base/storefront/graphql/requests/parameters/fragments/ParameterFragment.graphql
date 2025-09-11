@@ -1,0 +1,15 @@
+fragment ParameterFragment on Parameter {
+    __typename
+    uuid
+    name
+    group
+    unit {
+        __typename
+        name
+    }
+    values {
+        __typename
+        uuid
+        text
+    }
+}

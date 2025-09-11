@@ -1,0 +1,10 @@
+Query:
+    type: object
+    inherits:
+        - 'QueryDecorator'
+        - 'CategoryQuery'
+        - 'SliderQuery'
+        - 'OrderQuery'
+        - 'ProductQuery'
+        - 'SeoPageQuery'
+        - 'RecommendationQueryDecorator'

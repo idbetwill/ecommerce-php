@@ -1,0 +1,4 @@
+NavigationItemCategoriesByColumns:
+    type: object
+    inherits:
+        - 'NavigationItemCategoriesByColumnsDecorator'

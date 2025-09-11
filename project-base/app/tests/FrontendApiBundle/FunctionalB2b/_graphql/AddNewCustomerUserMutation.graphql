@@ -1,0 +1,25 @@
+mutation AddNewCustomerUserMutation(
+    $firstName: String! = "",
+    $lastName: String! = "",
+    $email: String! = "",
+    $roleGroupUuid: Uuid! = "00000000-0000-0000-0000-000000000000",
+    $telephone: String = ""
+) {
+    AddNewCustomerUser(input: {
+        firstName: $firstName,
+        lastName: $lastName,
+        email: $email,
+        roleGroupUuid: $roleGroupUuid,
+        telephone: $telephone
+        newsletterSubscription: false
+    }) {
+        billingAddressUuid
+        firstName
+        lastName
+        email
+        roleGroup {
+            uuid
+        }
+        telephone
+    }
+}

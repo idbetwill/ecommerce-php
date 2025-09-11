@@ -1,0 +1,4 @@
+ArticlePlacementTypeEnum:
+    type: enum
+    inherits:
+        - 'ArticlePlacementTypeEnumDecorator'

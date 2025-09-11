@@ -1,0 +1,4 @@
+LanguageConstant:
+    type: object
+    inherits:
+        - 'LanguageConstantDecorator'

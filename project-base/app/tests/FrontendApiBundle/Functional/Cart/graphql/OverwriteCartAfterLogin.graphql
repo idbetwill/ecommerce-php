@@ -1,0 +1,21 @@
+mutation OverwriteCartAfterLogin(
+    $email: String!
+    $password: Password!
+    $cartUuid: Uuid
+    $shouldOverwriteCustomerUserCart: Boolean!
+) {
+    Login(
+        input: {
+            email: $email
+            password: $password
+            cartUuid: $cartUuid
+            shouldOverwriteCustomerUserCart: $shouldOverwriteCustomerUserCart
+        }
+    ) {
+        tokens {
+            accessToken
+            refreshToken
+        }
+        showCartMergeInfo
+    }
+}

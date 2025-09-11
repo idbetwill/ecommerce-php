@@ -1,0 +1,12 @@
+fragment ListedProductConnectionFragment on ProductConnection {
+    __typename
+    pageInfo {
+        hasNextPage
+    }
+    edges {
+        __typename
+        node {
+            ...ListedProductFragment
+        }
+    }
+}

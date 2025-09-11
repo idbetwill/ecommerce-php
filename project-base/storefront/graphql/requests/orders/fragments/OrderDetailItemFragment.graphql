@@ -1,0 +1,43 @@
+fragment OrderDetailItemFragment on OrderItem {
+    __typename
+    uuid
+    name
+    unitPrice {
+        ...PriceFragment
+    }
+    totalPrice {
+        ...PriceFragment
+    }
+    vatRate
+    quantity
+    unit
+    type
+    order {
+        uuid
+        number
+        creationDate
+        customerUser {
+            uuid
+        }
+    }
+    product {
+        catalogNumber
+        slug
+        isVisible
+        isSellingDenied
+        isInquiryType
+        categories {
+            name
+        }
+        mainImage {
+            ...ImageFragment
+        }
+        price {
+            ...ProductPriceFragment
+        }
+        availability {
+            name
+            status
+        }
+    }
+}

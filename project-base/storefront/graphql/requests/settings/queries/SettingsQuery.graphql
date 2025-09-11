@@ -1,0 +1,23 @@
+query SettingsQuery @redisCache(ttl: 3600) {
+    settings {
+        pricing {
+            ...PricingSettingFragment
+        }
+        seo {
+            ...SeoSettingFragment
+        }
+        contactFormMainText
+        displayTimezone
+        heurekaEnabled
+        mainBlogCategoryData {
+            mainBlogCategoryUrl
+            mainBlogCategoryMainImage {
+                url
+            }
+        }
+        privacyPolicyArticleUrl
+        termsAndConditionsArticleUrl
+        userConsentPolicyArticleUrl
+        socialNetworkLoginConfig
+    }
+}

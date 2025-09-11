@@ -1,0 +1,15 @@
+fragment FlagDetailFragment on Flag {
+    __typename
+    uuid
+    slug
+    breadcrumb {
+        ...BreadcrumbFragment
+    }
+    name
+    products(orderingMode: $orderingMode, filter: $filter) {
+        ...ListedProductConnectionPreviewFragment
+    }
+    hreflangLinks {
+        ...HreflangLinksFragment
+    }
+}

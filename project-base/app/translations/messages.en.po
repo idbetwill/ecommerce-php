@@ -1,0 +1,127 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+
+msgid "Close"
+msgstr ""
+
+msgid "File not found in main filesystem. Please try again later."
+msgstr ""
+
+msgid "GTM ID"
+msgstr ""
+
+msgid "GTM creative"
+msgstr ""
+
+msgid "Insert variable"
+msgstr ""
+
+msgid "Insert your text here"
+msgstr ""
+
+msgid "Mandatory variables"
+msgstr ""
+
+msgid "No products are set. Please add some in the component settings."
+msgstr ""
+
+msgid "Optional variables"
+msgstr ""
+
+msgid "Related products"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "TOP"
+msgstr ""
+
+msgid "Terms-and-conditions.html"
+msgstr ""
+
+msgid "Unsupported file type"
+msgstr ""
+
+msgid "Unsupported order"
+msgstr ""
+
+msgid "Upload image"
+msgstr ""
+
+msgid "Upload image for mobile devices"
+msgstr ""
+
+msgid "You can upload following formats: PNG, JPG"
+msgstr ""
+
+msgid "e.g. Sale-04-20-2020"
+msgstr ""
+
+msgid "e.g. red-1035x340-jpg-carousel"
+msgstr ""
+
+msgid "from most expensive"
+msgstr ""
+
+msgid "from the cheapest"
+msgstr ""
+
+msgid "unknown catalog number (product will not be displayed)"
+msgstr ""
+
+
+# Import Log translations
+msgid "Import Logs"
+msgstr "Import Logs"
+
+msgid "Import Log"
+msgstr "Import Log"
+
+msgid "Start Time"
+msgstr "Start Time"
+
+msgid "End Time"
+msgstr "End Time"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Error Message"
+msgstr "Error Message"
+
+msgid "Records Changed"
+msgstr "Records Changed"
+
+msgid "Import Type"
+msgstr "Import Type"
+
+msgid "success"
+msgstr "Success"
+
+msgid "error"
+msgstr "Error"
+
+msgid "running"
+msgstr "Running"
+
+msgid "pending"
+msgstr "Pending"
+
+msgid "Do you really want to remove this import log?"
+msgstr "Do you really want to remove this import log?"
+
+msgid "Import log with id %id% deleted"
+msgstr "Import log with id %id% deleted"
+
+msgid "Please enter start time"
+msgstr "Please enter start time"
+
+msgid "Please select status"
+msgstr "Please select status"
+
+msgid "Please enter import type"
+msgstr "Please enter import type"

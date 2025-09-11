@@ -1,0 +1,11 @@
+query BrandProductsQuery(
+    $endCursor: String!
+    $orderingMode: ProductOrderingModeEnum
+    $filter: ProductFilter
+    $urlSlug: String
+    $pageSize: Int
+) {
+    products(brandSlug: $urlSlug, after: $endCursor, orderingMode: $orderingMode, filter: $filter, first: $pageSize) {
+        ...ListedProductConnectionFragment
+    }
+}

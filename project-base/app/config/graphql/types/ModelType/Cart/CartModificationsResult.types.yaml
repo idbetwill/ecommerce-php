@@ -1,0 +1,4 @@
+CartModificationsResult:
+    type: object
+    inherits:
+        - 'CartModificationsResultDecorator'

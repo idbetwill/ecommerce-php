@@ -1,0 +1,42 @@
+fragment CartItemFragment on CartItem {
+    __typename
+    uuid
+    quantity
+    product {
+        __typename
+        id
+        uuid
+        slug
+        ... on Variant {
+            mainVariant {
+                slug
+            }
+        }
+        fullName
+        catalogNumber
+        isInquiryType
+        flags {
+            ...SimpleFlagFragment
+        }
+        mainImage {
+            ...ImageFragment
+        }
+        availability {
+            ...AvailabilityFragment
+        }
+        price {
+            ...ProductPriceFragment
+        }
+        availableStoresCount
+        unit {
+            name
+        }
+        brand {
+            ...SimpleBrandFragment
+        }
+        categories {
+            name
+        }
+        vatPercent
+    }
+}

@@ -1,0 +1,4 @@
+RemovePromoCodeFromCartInput:
+    type: input-object
+    inherits:
+        - 'RemovePromoCodeFromCartInputDecorator'

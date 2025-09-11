@@ -1,0 +1,19 @@
+fragment ComplaintItemFragment on ComplaintItem {
+    quantity
+    description
+    orderItem {
+        ...OrderDetailItemFragment
+    }
+    files {
+        ...FileFragment
+    }
+    product {
+        mainImage {
+            ...ImageFragment
+        }
+        slug
+        isVisible
+    }
+    catnum
+    productName
+}

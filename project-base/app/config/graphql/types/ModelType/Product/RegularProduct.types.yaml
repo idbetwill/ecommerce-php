@@ -1,0 +1,5 @@
+RegularProduct:
+    type: object
+    inherits:
+        - 'RegularProductDecorator'
+

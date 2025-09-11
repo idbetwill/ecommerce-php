@@ -1,0 +1,4 @@
+AvailabilityStatusEnum:
+    type: enum
+    inherits:
+        - 'AvailabilityStatusEnumDecorator'

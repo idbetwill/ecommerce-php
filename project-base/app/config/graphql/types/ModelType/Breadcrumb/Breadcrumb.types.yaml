@@ -1,0 +1,4 @@
+Breadcrumb:
+    type: interface
+    inherits:
+        - 'BreadcrumbDecorator'

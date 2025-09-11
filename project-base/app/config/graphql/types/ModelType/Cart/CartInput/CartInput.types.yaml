@@ -1,0 +1,4 @@
+CartInput:
+    type: input-object
+    inherits:
+        - 'CartInputDecorator'

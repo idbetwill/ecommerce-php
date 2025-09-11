@@ -1,0 +1,10 @@
+docs
+cypress
+!cypress/tids.ts
+
+node_modules
+
+npm-debug.log
+README.md
+.next
+.git

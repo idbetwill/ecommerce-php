@@ -1,0 +1,5 @@
+query PromotedCategoriesQuery @redisCache(ttl: 3600) {
+    promotedCategories {
+        ...ListedCategoryFragment
+    }
+}

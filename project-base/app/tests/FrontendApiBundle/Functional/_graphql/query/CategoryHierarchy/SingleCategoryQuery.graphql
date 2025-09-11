@@ -1,0 +1,11 @@
+query SingleCategoryQuery(
+    $urlSlug: String
+) {
+    category(urlSlug: $urlSlug) {
+        categoryHierarchy {
+            id
+            name
+            uuid
+        }
+    }
+}

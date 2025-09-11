@@ -1,0 +1,15 @@
+SliderItem:
+    type: object
+    inherits:
+        - 'SliderItemDecorator'
+    config:
+        fields:
+            uuid:
+                type: "Uuid!"
+                description: "UUID"
+            gtmId:
+                type: "String!"
+                description: "GTM ID"
+            gtmCreative:
+                type: "String"
+                description: "GTM creative"

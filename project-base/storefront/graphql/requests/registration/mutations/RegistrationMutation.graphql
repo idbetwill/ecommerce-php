@@ -1,0 +1,8 @@
+mutation RegistrationMutation($input: RegistrationDataInput!) {
+    Register(input: $input) {
+        tokens {
+            ...TokenFragments
+        }
+        showCartMergeInfo
+    }
+}

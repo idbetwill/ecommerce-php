@@ -1,0 +1,4 @@
+ArticleSite:
+    type: object
+    inherits:
+        - 'ArticleSiteDecorator'

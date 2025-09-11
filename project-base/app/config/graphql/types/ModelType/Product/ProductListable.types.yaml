@@ -1,0 +1,4 @@
+ProductListable:
+    type: interface
+    inherits:
+        - 'ProductListableDecorator'

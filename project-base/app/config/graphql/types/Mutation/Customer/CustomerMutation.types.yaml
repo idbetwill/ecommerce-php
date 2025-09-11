@@ -1,0 +1,4 @@
+CustomerMutation:
+    type: object
+    inherits:
+        - 'DeliveryAddressMutationDecorator'

@@ -1,0 +1,58 @@
+overblog_dataloader:
+    defaults:
+        promise_adapter: "overblog_dataloader.webonyx_graphql_sync_promise_adapter"
+    loaders:
+        brandsBatchLoader:
+            alias: "brands_batch_loader"
+            batch_load_fn: "@Shopsys\\FrontendApiBundle\\Model\\Brand\\BrandsBatchLoader:loadByIds"
+        categoriesBatchLoader:
+            alias: "categories_batch_loader"
+            batch_load_fn: "@Shopsys\\FrontendApiBundle\\Model\\Category\\CategoriesBatchLoader:loadByIds"
+        categoryChildrenBatchLoader:
+            alias: "category_children_batch_loader"
+            batch_load_fn: "@App\\FrontendApi\\Model\\Category\\CategoryChildrenBatchLoader:loadByCategories"
+        customerUploadedFilesBatchLoader:
+            alias: "customer_uploaded_files_batch_loader"
+            batch_load_fn: "@Shopsys\\FrontendApiBundle\\Component\\CustomerUploadedFile\\CustomerUploadedFilesBatchLoader:loadByBatchData"
+        filesBatchLoader:
+            alias: "files_batch_loader"
+            batch_load_fn: "@Shopsys\\FrontendApiBundle\\Component\\Files\\FilesBatchLoader:loadByBatchData"
+        firstImageBatchLoader:
+            alias: "first_image_batch_loader"
+            batch_load_fn: "@Shopsys\\FrontendApiBundle\\Component\\Image\\FirstImageBatchLoader:loadByBatchData"
+        flagsBatchLoader:
+            alias: "flags_batch_loader"
+            batch_load_fn: "@App\\FrontendApi\\Model\\Flag\\FlagsBatchLoader:loadByIds"
+        imagesBatchLoader:
+            alias: "images_batch_loader"
+            batch_load_fn: "@Shopsys\\FrontendApiBundle\\Component\\Image\\ImagesBatchLoader:loadByBatchData"
+        luigisBoxBatchLoader:
+            alias: "luigis_box_batch_loader"
+            batch_load_fn: "@Shopsys\\LuigisBoxBundle\\Model\\Batch\\LuigisBoxBatchLoader:loadByBatchData"
+        productsByEntitiesBatchLoader:
+            alias: "products_by_entities_batch_loader"
+            batch_load_fn: "@Shopsys\\FrontendApiBundle\\Model\\Product\\BatchLoad\\ProductsBatchLoader:loadByEntities"
+        productsSellableByIdsBatchLoader:
+            alias: "products_sellable_by_ids_batch_loader"
+            batch_load_fn: "@Shopsys\\FrontendApiBundle\\Model\\Product\\BatchLoad\\ProductsBatchLoader:loadSellableByIds"
+        productsSellableCountByIdsBatchLoader:
+            alias: "products_sellable_count_by_ids_batch_loader"
+            batch_load_fn: "@Shopsys\\FrontendApiBundle\\Model\\Product\\BatchLoad\\ProductsBatchLoader:loadSellableCountByIds"
+        productsSellableInCategoryByIdsBatchLoader:
+            alias: "products_sellable_in_category_by_ids_batch_loader"
+            batch_load_fn: "@Shopsys\\FrontendApiBundle\\Model\\Product\\BatchLoad\\ProductsBatchLoader:loadSellableInCategoryByIds"
+        productsVisibleAndSortedByIdsBatchLoader:
+            alias: "products_visible_and_sorted_by_ids_batch_loader"
+            batch_load_fn: "@Shopsys\\FrontendApiBundle\\Model\\Product\\BatchLoad\\ProductsBatchLoader:loadVisibleAndSortedByIds"
+        productsVisibleByIdsBatchLoader:
+            alias: "products_visible_by_ids_batch_loader"
+            batch_load_fn: "@Shopsys\\FrontendApiBundle\\Model\\Product\\BatchLoad\\ProductsBatchLoader:loadVisibleByIds"
+        productsVisibleCountByIdsBatchLoader:
+            alias: "products_visible_count_by_ids_batch_loader"
+            batch_load_fn: "@Shopsys\\FrontendApiBundle\\Model\\Product\\BatchLoad\\ProductsBatchLoader:loadVisibleCountByIds"
+        readyCategorySeoMixesBatchLoader:
+            alias: "ready_category_seo_mixes_batch_loader"
+            batch_load_fn: "@Shopsys\\FrontendApiBundle\\Model\\Category\\ReadyCategorySeoMixBatchLoader:loadByCategoryIds"
+        storesBatchLoader:
+            alias: "stores_batch_loader"
+            batch_load_fn: "@Shopsys\\FrontendApiBundle\\Model\\Store\\StoresBatchLoader:loadByIds"

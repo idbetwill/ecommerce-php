@@ -1,0 +1,10 @@
+ProductQuery:
+    type: object
+    config:
+        fields:
+            ParameterSliderFilterOption:
+                type: "ParameterSliderFilterOption"
+            ParameterCheckboxFilterOption:
+                type: "ParameterCheckboxFilterOption"
+            ParameterColorFilterOption:
+                type: "ParameterColorFilterOption"

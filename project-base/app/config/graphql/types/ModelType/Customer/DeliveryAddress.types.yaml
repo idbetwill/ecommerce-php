@@ -1,0 +1,4 @@
+DeliveryAddress:
+    type: object
+    inherits:
+        - 'DeliveryAddressDecorator'

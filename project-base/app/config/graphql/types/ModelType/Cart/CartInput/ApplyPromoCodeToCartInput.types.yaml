@@ -1,0 +1,4 @@
+ApplyPromoCodeToCartInput:
+    type: input-object
+    inherits:
+        - 'ApplyPromoCodeToCartInputDecorator'

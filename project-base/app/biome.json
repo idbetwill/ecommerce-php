@@ -1,0 +1,12 @@
+{
+    "extends": ["@shopsys/biome-config"],
+    "files": {
+        "includes": [
+            "assets/js/**",
+            "!assets/js/commands/translations/mocks",
+            "!assets/js/bundles",
+            "!assets/extra/bundles/fosckeditor/plugins",
+            "!assets/js/translations.json"
+        ]
+    }
+}

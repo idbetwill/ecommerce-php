@@ -1,0 +1,17 @@
+query ProductDetailQuery($urlSlug: String) @friendlyUrl {
+    product(urlSlug: $urlSlug) {
+        ... on Product {
+            ...ProductDetailFragment
+        }
+        ... on MainVariant {
+            ...MainVariantDetailFragment
+        }
+        ... on Variant {
+            __typename
+            catalogNumber
+            mainVariant {
+                slug
+            }
+        }
+    }
+}

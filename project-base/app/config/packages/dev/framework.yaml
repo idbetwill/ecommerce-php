@@ -1,0 +1,8 @@
+framework:
+    profiler:
+        collect: true
+        enabled: true
+        only_exceptions: false
+        only_main_requests: true
+    router:
+        strict_requirements: true

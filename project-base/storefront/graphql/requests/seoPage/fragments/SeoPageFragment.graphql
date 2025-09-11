@@ -1,0 +1,14 @@
+fragment SeoPageFragment on SeoPage {
+    __typename
+    title
+    metaDescription
+    canonicalUrl
+    ogTitle
+    ogDescription
+    ogImage {
+        ...ImageFragment
+    }
+    hreflangLinks {
+        ...HreflangLinksFragment
+    }
+}

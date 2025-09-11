@@ -1,0 +1,12 @@
+fragment OpeningHoursFragment on OpeningHours {
+    status
+    dayOfWeek
+    openingHoursOfDays {
+        date
+        dayOfWeek
+        openingHoursRanges {
+            openingTime
+            closingTime
+        }
+    }
+}

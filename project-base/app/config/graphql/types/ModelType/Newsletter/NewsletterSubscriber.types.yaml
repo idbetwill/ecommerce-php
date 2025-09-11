@@ -1,0 +1,4 @@
+NewsletterSubscriber:
+    type: object
+    inherits:
+        - 'NewsletterSubscriberDecorator'

@@ -1,0 +1,4 @@
+shopsys_shop_tests:
+    prefix: /test
+    resource: ../../../src/Controller/Test/
+    type: attribute

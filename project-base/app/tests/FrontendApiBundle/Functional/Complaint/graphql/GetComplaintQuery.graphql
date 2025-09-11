@@ -1,0 +1,25 @@
+query GetComplaintQuery ($complaintNumber: String!) {
+    complaint(
+        number: $complaintNumber
+    ) {
+        uuid
+        number
+        email
+        createdAt
+        deliveryFirstName
+        deliveryLastName
+        deliveryCompanyName
+        deliveryTelephone
+        deliveryStreet
+        deliveryCity
+        deliveryPostcode
+        status
+        items {
+            quantity
+            description
+            orderItem {
+                uuid
+            }
+        }
+    }
+}

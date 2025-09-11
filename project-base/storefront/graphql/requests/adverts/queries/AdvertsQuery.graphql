@@ -1,0 +1,5 @@
+query AdvertsQuery($categoryUuid: Uuid, $positionNames: [String!]) {
+    adverts(categoryUuid: $categoryUuid, positionNames: $positionNames) {
+        ...AdvertsFragment
+    }
+}

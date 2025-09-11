@@ -1,0 +1,7 @@
+Mutation:
+    type: object
+    inherits:
+        - 'MutationDecorator'
+        - 'CustomerUserMutation'
+        - 'PersonalDataMutation'
+        - 'CustomerMutation'

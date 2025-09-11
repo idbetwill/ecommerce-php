@@ -1,0 +1,14 @@
+fragment ProductFilterOptionsParametersSliderFragment on ParameterSliderFilterOption {
+    name
+    uuid
+    __typename
+    minimalValue
+    maximalValue
+    unit {
+        __typename
+        name
+    }
+    isCollapsed
+    selectedValue
+    isSelectable
+}

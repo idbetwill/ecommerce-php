@@ -1,0 +1,4 @@
+NavigationItem:
+    type: object
+    inherits:
+        - 'NavigationItemDecorator'

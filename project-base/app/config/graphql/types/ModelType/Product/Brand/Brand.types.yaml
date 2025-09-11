@@ -1,0 +1,25 @@
+Brand:
+    type: object
+    inherits:
+        - 'BrandDecorator'
+    config:
+        fields:
+            id:
+                type: "Int!"
+                description: "ID of category"
+            images:
+                type: "[Image!]!"
+                description: "Brand images"
+                resolve: '@=query("imagesByEntityPromiseQuery", value, args["type"])'
+                args:
+                    type:
+                        type: "String"
+                        defaultValue: null
+            mainImage:
+                type: "Image"
+                description: "Brand image by params"
+                resolve: '@=query("mainImageByEntityPromiseQuery", value, args["type"])'
+                args:
+                    type:
+                        type: "String"
+                        defaultValue: null

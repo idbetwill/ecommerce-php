@@ -1,0 +1,52 @@
+query AutocompleteSearchQuery(
+    $search: String!
+    $maxProductCount: Int
+    $maxCategoryCount: Int
+    $isAutocomplete: Boolean!
+    $userIdentifier: Uuid!
+) {
+    articlesSearch(
+        searchInput: {
+            search: $search,
+            isAutocomplete: $isAutocomplete
+            userIdentifier: $userIdentifier
+        }
+    ) {
+        ...SimpleArticleInterfaceFragment
+    }
+    brandSearch(
+        searchInput: {
+            search: $search,
+            isAutocomplete: $isAutocomplete
+            userIdentifier: $userIdentifier
+        }
+    ) {
+        ...SimpleBrandFragment
+    }
+    categoriesSearch(
+        searchInput: {
+            search: $search
+            isAutocomplete: $isAutocomplete
+            userIdentifier: $userIdentifier
+        }
+        first: $maxCategoryCount
+    ) {
+        ...SimpleCategoryConnectionFragment
+    }
+    productsSearch: productsSearch(
+        searchInput: {
+            search: $search
+            isAutocomplete: $isAutocomplete
+            userIdentifier: $userIdentifier
+        }
+        first: $maxProductCount
+    ) {
+        orderingMode
+        defaultOrderingMode
+        totalCount
+        productFilterOptions {
+            ...ProductFilterOptionsFragment
+        }
+        ...ListedProductConnectionFragment
+    }
+}

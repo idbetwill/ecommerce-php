@@ -1,0 +1,9 @@
+fragment CartItemModificationsFragment on CartItemModificationsResult {
+    __typename
+    noLongerListableCartItems {
+        ...CartItemFragment
+    }
+    cartItemsWithModifiedPrice {
+        ...CartItemFragment
+    }
+}

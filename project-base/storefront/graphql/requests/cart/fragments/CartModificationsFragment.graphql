@@ -1,0 +1,21 @@
+fragment CartModificationsFragment on CartModificationsResult {
+    __typename
+    itemModifications {
+        ...CartItemModificationsFragment
+    }
+    transportModifications {
+        ...CartTransportModificationsFragment
+    }
+    paymentModifications {
+        ...CartPaymentModificationsFragment
+    }
+    promoCodeModifications {
+        ...CartPromoCodeModificationsFragment
+    }
+    someProductWasRemovedFromEshop
+    multipleAddedProductModifications {
+        notAddedProducts {
+            fullName
+        }
+    }
+}

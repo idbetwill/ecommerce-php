@@ -1,0 +1,14 @@
+fragment ProductPriceFragment on ProductPrice {
+    __typename
+    priceWithVat
+    priceWithoutVat
+    vatAmount
+    isPriceFrom
+    nextPriceChange
+    percentageDiscount
+    basicPrice{
+        priceWithVat
+        priceWithoutVat
+        vatAmount
+    }
+}

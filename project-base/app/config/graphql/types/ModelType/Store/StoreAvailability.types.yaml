@@ -1,0 +1,4 @@
+StoreAvailability:
+    type: object
+    inherits:
+        - 'StoreAvailabilityDecorator'

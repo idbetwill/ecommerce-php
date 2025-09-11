@@ -1,0 +1,4 @@
+ChangeTransportInCartInput:
+    type: input-object
+    inherits:
+        - 'ChangeTransportInCartInputDecorator'

@@ -1,0 +1,4 @@
+BlogArticle:
+    type: object
+    inherits:
+        - 'BlogArticleDecorator'

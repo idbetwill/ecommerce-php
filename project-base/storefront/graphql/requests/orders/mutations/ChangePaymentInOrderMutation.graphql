@@ -1,0 +1,5 @@
+mutation ChangePaymentInOrderMutation($input: ChangePaymentInOrderInput!) {
+    ChangePaymentInOrder(input: $input) {
+        ...ChangePaymentInOrderFragment
+    }
+}
