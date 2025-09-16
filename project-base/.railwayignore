@@ -1,0 +1,30 @@
+# Archivos de desarrollo
+docker/
+docker-compose*.yml
+*.log
+*.tmp
+
+# Cache y logs
+var/cache/*
+var/log/*
+var/sessions/*
+
+# Node modules (se instalan en el servidor)
+node_modules/
+
+# Archivos de entorno local
+.env.local
+.env.dev
+
+# Archivos de testing
+tests/
+phpunit.xml
+
+# Documentación
+*.md
+!README.md
+
+# Scripts de instalación
+install*.sh
+start*.sh
+deploy.sh
