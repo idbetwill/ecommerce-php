@@ -1,4 +1,0 @@
-ParameterValue:
-    type: object
-    inherits:
-        - 'ParameterValueDecorator'

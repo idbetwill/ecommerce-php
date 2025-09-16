@@ -1,7 +1,0 @@
-mutation ContactFormMutation($name: String!, $email: String!, $message: String!) {
-    ContactForm(input: {
-        name: $name,
-        email: $email,
-        message: $message
-    })
-}

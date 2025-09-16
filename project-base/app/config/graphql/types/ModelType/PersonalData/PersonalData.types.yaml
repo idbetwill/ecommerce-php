@@ -1,4 +1,0 @@
-PersonalData:
-    type: object
-    inherits:
-        - 'PersonalDataDecorator'

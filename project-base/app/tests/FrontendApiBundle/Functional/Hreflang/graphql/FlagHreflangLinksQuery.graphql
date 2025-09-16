@@ -1,8 +1,0 @@
-query FlagHreflangLinksQuery($urlSlug: String!) {
-    flag(urlSlug: $urlSlug) {
-        hreflangLinks{
-            hreflang
-            href
-        }
-    }
-}

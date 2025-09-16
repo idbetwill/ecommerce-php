@@ -1,4 +1,0 @@
-PersonalDataAccessRequestInput:
-    type: input-object
-    inherits:
-        - 'PersonalDataAccessRequestInputDecorator'

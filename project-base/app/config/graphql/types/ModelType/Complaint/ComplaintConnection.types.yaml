@@ -1,6 +1,0 @@
-ComplaintConnection:
-    type: relay-connection
-    config:
-        nodeType: Complaint
-    inherits:
-        - 'ComplaintConnectionDecorator'

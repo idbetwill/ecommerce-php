@@ -1,9 +1,0 @@
-ParameterValueFilterOption:
-    type: object
-    inherits:
-        - 'ParameterValueFilterOptionDecorator'
-    config:
-        fields:
-            isSelected:
-                type: "Boolean!"
-                description: "Indicator whether the option is already selected (used for \"ready category seo mixes\")"

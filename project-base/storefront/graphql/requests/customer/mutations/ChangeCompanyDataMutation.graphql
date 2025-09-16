@@ -1,5 +1,0 @@
-mutation ChangeCompanyDataMutation($input: ChangeCompanyDataInput!) {
-    ChangeCompanyData(input: $input) {
-        ...CurrentCustomerUserFragment
-    }
-}

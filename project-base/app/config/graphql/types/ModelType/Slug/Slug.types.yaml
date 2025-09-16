@@ -1,4 +1,0 @@
-Slug:
-    type: interface
-    inherits:
-        - 'SlugDecorator'

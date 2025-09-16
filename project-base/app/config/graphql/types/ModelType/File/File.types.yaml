@@ -1,4 +1,0 @@
-File:
-    type: object
-    inherits:
-        - 'FileDecorator'

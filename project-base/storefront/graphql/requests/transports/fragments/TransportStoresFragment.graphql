@@ -1,7 +1,0 @@
-fragment TransportStoresFragment on Transport {
-    __typename
-    uuid
-    stores {
-        ...ListedStoreConnectionFragment
-    }
-}

@@ -1,4 +1,0 @@
-CartMultipleAddedProductModificationsResult:
-    type: object
-    inherits:
-        - 'CartMultipleAddedProductModificationsResultDecorator'

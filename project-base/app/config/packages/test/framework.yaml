@@ -1,5 +1,0 @@
-framework:
-    session:
-        cookie_httponly: true
-        storage_factory_id: session.storage.factory.mock_file
-    test: ~

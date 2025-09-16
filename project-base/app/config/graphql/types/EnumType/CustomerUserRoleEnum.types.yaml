@@ -1,4 +1,0 @@
-CustomerUserRoleEnum:
-    type: enum
-    inherits:
-        - 'CustomerUserRoleEnumDecorator'

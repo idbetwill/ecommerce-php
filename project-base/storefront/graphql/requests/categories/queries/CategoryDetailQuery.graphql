@@ -1,6 +1,0 @@
-query CategoryDetailQuery($urlSlug: String, $orderingMode: ProductOrderingModeEnum, $filter: ProductFilter)
-@friendlyUrl {
-    category(urlSlug: $urlSlug, orderingMode: $orderingMode, filter: $filter) {
-        ...CategoryDetailFragment
-    }
-}

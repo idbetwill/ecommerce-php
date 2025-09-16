@@ -1,6 +1,0 @@
-OrderItemConnection:
-    type: relay-connection
-    config:
-        nodeType: OrderItem
-    inherits:
-        - 'OrderItemConnectionDecorator'

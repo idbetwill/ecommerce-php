@@ -1,5 +1,0 @@
-query LastOrderQuery {
-    lastOrder {
-        ...LastOrderFragment
-    }
-}

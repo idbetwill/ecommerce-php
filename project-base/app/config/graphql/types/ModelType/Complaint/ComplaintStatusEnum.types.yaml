@@ -1,4 +1,0 @@
-ComplaintStatusEnum:
-    type: enum
-    inherits:
-        - 'ComplaintStatusEnumDecorator'

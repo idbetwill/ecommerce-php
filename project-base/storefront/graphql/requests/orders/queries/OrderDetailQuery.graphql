@@ -1,5 +1,0 @@
-query OrderDetailQuery($orderNumber: String) {
-    order(orderNumber: $orderNumber) {
-        ...OrderDetailFragment
-    }
-}

@@ -1,4 +1,0 @@
-CartPaymentModificationsResult:
-    type: object
-    inherits:
-        - 'CartPaymentModificationsResultDecorator'

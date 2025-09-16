@@ -1,4 +1,0 @@
-OpeningHoursRange:
-    type: object
-    inherits:
-        - 'OpeningHoursRangeDecorator'

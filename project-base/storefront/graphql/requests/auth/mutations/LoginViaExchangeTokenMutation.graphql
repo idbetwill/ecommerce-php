@@ -1,5 +1,0 @@
-mutation LoginViaExchangeTokenMutation($exchangeToken: String!) {
-    LoginViaExchangeToken(exchangeToken: $exchangeToken) {
-        ...TokenFragments
-    }
-}

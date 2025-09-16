@@ -1,4 +1,0 @@
-SalesRepresentative:
-    type: object
-    inherits:
-        - 'SalesRepresentativeDecorator'

@@ -1,5 +1,0 @@
-query PersonalDataDetailQuery($hash: String!) {
-    accessPersonalData(hash: $hash) {
-        ...PersonalDataDetailFragment
-    }
-}

@@ -1,4 +1,0 @@
-CartTransportModificationsResult:
-    type: object
-    inherits:
-        - 'CartTransportModificationsResultDecorator'

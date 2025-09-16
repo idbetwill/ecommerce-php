@@ -1,4 +1,0 @@
-ProductListUpdateInput:
-    type: input-object
-    inherits:
-        - 'ProductListUpdateInputDecorator'

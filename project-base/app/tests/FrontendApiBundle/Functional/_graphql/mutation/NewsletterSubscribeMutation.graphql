@@ -1,5 +1,0 @@
-mutation NewsletterSubscribe($email: String!) {
-    NewsletterSubscribe(input: {
-        email: $email
-    })
-}

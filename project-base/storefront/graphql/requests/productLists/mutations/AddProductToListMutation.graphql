@@ -1,5 +1,0 @@
-mutation AddProductToListMutation($input: ProductListUpdateInput!) {
-    AddProductToList(input: $input) {
-        ...ProductListFragment
-    }
-}

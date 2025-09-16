@@ -1,5 +1,0 @@
-fragment VideoTokenFragment on VideoToken {
-    __typename
-    description
-    token
-}

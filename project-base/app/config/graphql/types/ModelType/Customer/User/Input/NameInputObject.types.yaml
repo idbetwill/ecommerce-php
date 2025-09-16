@@ -1,4 +1,0 @@
-NameInputObject:
-    type: input-object
-    inherits:
-        - 'NameInputObjectDecorator'

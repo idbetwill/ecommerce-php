@@ -1,4 +1,0 @@
-VideoToken:
-    type: object
-    inherits:
-        - 'VideoTokenDecorator'

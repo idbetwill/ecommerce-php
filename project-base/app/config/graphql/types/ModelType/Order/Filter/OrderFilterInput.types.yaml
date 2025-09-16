@@ -1,4 +1,0 @@
-OrderFilterInput:
-    type: input-object
-    inherits:
-        - 'OrderFilterInputDecorator'

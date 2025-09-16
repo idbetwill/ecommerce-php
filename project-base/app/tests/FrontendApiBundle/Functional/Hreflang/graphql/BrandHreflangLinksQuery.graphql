@@ -1,8 +1,0 @@
-query BrandHreflangLinksQuery($urlSlug: String!) {
-    brand(urlSlug: $urlSlug) {
-        hreflangLinks{
-            hreflang
-            href
-        }
-    }
-}

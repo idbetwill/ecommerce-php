@@ -1,5 +1,0 @@
-query CustomerUserRoleGroupsQuery {
-    customerUserRoleGroups {
-        ...CustomerUserRoleGroupFragment
-    }
-}

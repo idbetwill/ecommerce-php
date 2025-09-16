@@ -1,4 +1,0 @@
-CreateOrderResult:
-    type: object
-    inherits:
-        - 'CreateOrderResultDecorator'

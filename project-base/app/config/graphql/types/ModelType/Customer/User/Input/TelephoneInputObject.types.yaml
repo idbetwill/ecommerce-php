@@ -1,4 +1,0 @@
-TelephoneInputObject:
-    type: input-object
-    inherits:
-        - 'TelephoneInputObjectDecorator'

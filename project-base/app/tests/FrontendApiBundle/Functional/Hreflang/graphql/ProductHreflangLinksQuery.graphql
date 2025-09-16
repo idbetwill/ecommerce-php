@@ -1,8 +1,0 @@
-query ProductHreflangLinksQuery($urlSlug: String!) {
-    product(urlSlug: $urlSlug) {
-        hreflangLinks{
-            hreflang
-            href
-        }
-    }
-}

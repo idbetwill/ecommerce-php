@@ -1,4 +1,0 @@
-RecommendationType:
-    type: enum
-    inherits:
-        - 'RecommendationTypeDecorator'

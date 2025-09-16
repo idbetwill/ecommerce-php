@@ -1,4 +1,0 @@
-ProductOrderingModeEnum:
-    type: enum
-    inherits:
-        - 'ProductOrderingModeEnumDecorator'

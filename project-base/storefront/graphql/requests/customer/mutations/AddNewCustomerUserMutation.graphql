@@ -1,5 +1,0 @@
-mutation AddNewCustomerUserMutation($input: AddNewCustomerUserDataInput!) {
-    AddNewCustomerUser(input: $input) {
-        ...SimpleCustomerUserFragment
-    }
-}

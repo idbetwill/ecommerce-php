@@ -1,4 +1,0 @@
-Store:
-    type: object
-    inherits:
-        - 'StoreDecorator'

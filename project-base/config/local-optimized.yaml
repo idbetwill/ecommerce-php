@@ -1,0 +1,19 @@
+# Configuración optimizada para desarrollo local
+parameters:
+    # Deshabilitar servicios no esenciales
+    elasticsearch.enabled: false
+    kibana.enabled: false
+    redis_commander.enabled: false
+    adminer.enabled: false
+    smtp_server.enabled: false
+    selenium.enabled: false
+    img_proxy.enabled: false
+    
+    # Optimizaciones de memoria
+    php.memory_limit: 256M
+    postgres.shared_buffers: 64MB
+    postgres.effective_cache_size: 128MB
+    
+    # Configuración de desarrollo
+    app_env: dev
+    app_debug: true

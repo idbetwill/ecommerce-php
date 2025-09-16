@@ -1,4 +1,0 @@
-CartItem:
-    type: object
-    inherits:
-        - 'CartItemDecorator'

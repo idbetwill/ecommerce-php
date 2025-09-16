@@ -1,0 +1,117 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nueva Categoría{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1>Nueva Categoría</h1>
+                <a href="{{ path('admin_category_index') }}" class="btn btn-outline-secondary">
+                    <i class="fas fa-arrow-left"></i> Volver al Listado
+                </a>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    {{ form_start(form, {'attr': {'class': 'needs-validation', 'novalidate': true}}) }}
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h5 class="mb-3">Información Básica</h5>
+                                
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        {{ form_row(form.name, {'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                    <div class="col-md-4">
+                                        {{ form_row(form.slug, {'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                </div>
+
+                                {{ form_row(form.description, {'attr': {'class': 'form-control'}}) }}
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        {{ form_row(form.parent, {'attr': {'class': 'form-select'}}) }}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{ form_row(form.sortOrder, {'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                </div>
+
+                                <div class="form-check form-switch mt-3">
+                                    {{ form_widget(form.isActive, {'attr': {'class': 'form-check-input'}}) }}
+                                    {{ form_label(form.isActive, null, {'label_attr': {'class': 'form-check-label'}}) }}
+                                </div>
+
+                                <h5 class="mb-3 mt-4">SEO</h5>
+                                
+                                {{ form_row(form.metaTitle, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_row(form.metaDescription, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_row(form.metaKeywords, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card bg-light">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Información</h6>
+                                        <p class="card-text small text-muted">
+                                            <strong>Slug:</strong> Se usa en las URLs. Solo letras minúsculas, números y guiones.<br><br>
+                                            <strong>Categoría Padre:</strong> Opcional. Crea una jerarquía de categorías.<br><br>
+                                            <strong>Orden:</strong> Controla el orden de aparición en listados.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4">
+                                    {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary w-100'}}) }}
+                                </div>
+                            </div>
+                        </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Auto-generar slug desde el nombre
+document.addEventListener('DOMContentLoaded', function() {
+    const nameInput = document.querySelector('input[name="custom_product_category[name]"]');
+    const slugInput = document.querySelector('input[name="custom_product_category[slug]"]');
+    
+    if (nameInput && slugInput) {
+        nameInput.addEventListener('input', function() {
+            if (!slugInput.value) {
+                const slug = this.value
+                    .toLowerCase()
+                    .replace(/[^a-z0-9\s-]/g, '')
+                    .replace(/\s+/g, '-')
+                    .replace(/-+/g, '-')
+                    .trim('-');
+                slugInput.value = slug;
+            }
+        });
+    }
+});
+
+// Validación del formulario
+(function() {
+    'use strict';
+    window.addEventListener('load', function() {
+        var forms = document.getElementsByClassName('needs-validation');
+        var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    }, false);
+})();
+</script>
+{% endblock %}

@@ -1,4 +1,0 @@
-CartPromoCodeModificationsResult:
-    type: object
-    inherits:
-        - 'CartPromoCodeModificationsResultDecorator'

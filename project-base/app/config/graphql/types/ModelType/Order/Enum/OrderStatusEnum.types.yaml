@@ -1,4 +1,0 @@
-OrderStatusEnum:
-    type: enum
-    inherits:
-        - 'OrderStatusEnumDecorator'

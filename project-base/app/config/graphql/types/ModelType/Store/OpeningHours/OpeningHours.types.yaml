@@ -1,4 +1,0 @@
-OpeningHours:
-    type: object
-    inherits:
-        - 'OpeningHoursDecorator'

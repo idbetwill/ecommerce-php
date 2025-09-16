@@ -1,4 +1,0 @@
-RemoveFromCartInput:
-    type: input-object
-    inherits:
-        - 'RemoveFromCartInputDecorator'

@@ -1,5 +1,0 @@
-query OrderItemsSearchQuery($search: String!, $userIdentifier: Uuid!) {
-    orderItemsSearch(searchInput: {search: $search, userIdentifier: $userIdentifier}) {
-        totalCount
-    }
-}

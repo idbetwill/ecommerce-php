@@ -1,4 +1,0 @@
-DeliveryAddressInput:
-    type: input-object
-    inherits:
-        - 'DeliveryAddressInputObjectDecorator'

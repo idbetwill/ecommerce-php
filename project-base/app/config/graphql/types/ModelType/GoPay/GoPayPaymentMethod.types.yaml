@@ -1,4 +1,0 @@
-GoPayPaymentMethod:
-    type: object
-    inherits:
-        - 'GoPayPaymentMethodDecorator'

@@ -1,4 +1,0 @@
-StoreOpeningStatusEnum:
-    type: enum
-    inherits:
-        - 'StoreOpeningStatusEnumDecorator'

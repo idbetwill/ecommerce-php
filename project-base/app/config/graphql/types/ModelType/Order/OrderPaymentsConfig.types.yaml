@@ -1,4 +1,0 @@
-OrderPaymentsConfig:
-    type: object
-    inherits:
-        - 'OrderPaymentsConfigDecorator'

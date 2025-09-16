@@ -1,4 +1,0 @@
-EditCustomerUserPersonalDataInput:
-    type: input-object
-    inherits:
-        - 'EditCustomerUserPersonalDataInputDecorator'

@@ -1,7 +1,0 @@
-fragment ColumnCategoriesFragment on NavigationItemCategoriesByColumns {
-    __typename
-    columnNumber
-    categories {
-        ...ColumnCategoryFragment
-    }
-}

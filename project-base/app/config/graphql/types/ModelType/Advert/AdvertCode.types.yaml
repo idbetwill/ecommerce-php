@@ -1,4 +1,0 @@
-AdvertCode:
-    type: object
-    inherits:
-        - 'AdvertCodeDecorator'

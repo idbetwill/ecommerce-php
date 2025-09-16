@@ -1,4 +1,0 @@
-fragment CartPromoCodeModificationsFragment on CartPromoCodeModificationsResult {
-    __typename
-    noLongerApplicablePromoCode
-}

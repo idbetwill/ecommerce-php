@@ -1,1 +1,0 @@
-# Shopsys Platform Backend

@@ -1,4 +1,0 @@
-AddProductResult:
-    type: object
-    inherits:
-        - 'AddProductResultDecorator'

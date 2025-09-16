@@ -1,5 +1,0 @@
-query StoreDetailQuery($urlSlug: String) @friendlyUrl {
-    store(urlSlug: $urlSlug) {
-        ...StoreDetailFragment
-    }
-}

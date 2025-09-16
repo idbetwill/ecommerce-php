@@ -1,4 +1,0 @@
-AddToCartResult:
-    type: object
-    inherits:
-        - 'AddToCartResultDecorator'

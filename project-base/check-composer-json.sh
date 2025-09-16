@@ -1,1 +1,0 @@
-app/check-composer-json.sh

@@ -1,4 +1,0 @@
-Country:
-    type: object
-    inherits:
-        - 'CountryDecorator'

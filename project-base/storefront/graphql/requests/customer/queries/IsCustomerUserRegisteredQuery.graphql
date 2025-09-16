@@ -1,3 +1,0 @@
-query IsCustomerUserRegisteredQuery($email: String!) {
-    isCustomerUserRegistered(email: $email)
-}

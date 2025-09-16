@@ -1,4 +1,0 @@
-BillingAddressInputObject:
-    type: input-object
-    inherits:
-        - 'BillingAddressInputObjectDecorator'

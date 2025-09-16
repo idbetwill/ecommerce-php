@@ -1,4 +1,0 @@
-Link:
-    type: object
-    inherits:
-        - 'LinkDecorator'

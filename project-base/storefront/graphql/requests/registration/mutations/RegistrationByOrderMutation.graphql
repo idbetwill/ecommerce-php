@@ -1,8 +1,0 @@
-mutation RegistrationByOrderMutation($input: RegistrationByOrderInput!) {
-    RegisterByOrder(input: $input) {
-        tokens {
-            ...TokenFragments
-        }
-        showCartMergeInfo
-    }
-}

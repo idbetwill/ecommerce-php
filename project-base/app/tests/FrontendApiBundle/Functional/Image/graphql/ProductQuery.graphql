@@ -1,8 +1,0 @@
-query ProductQuery($productUuid: Uuid!) {
-    product(uuid: $productUuid) {
-        images {
-            url
-            name
-        }
-    }
-}

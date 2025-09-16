@@ -1,5 +1,0 @@
-mutation DeleteDeliveryAddressMutation($deliveryAddressUuid: Uuid!) {
-    DeleteDeliveryAddress(deliveryAddressUuid: $deliveryAddressUuid) {
-        ...DeliveryAddressFragment
-    }
-}

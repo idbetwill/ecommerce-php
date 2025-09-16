@@ -1,5 +1,0 @@
-mutation EditCustomerUserPersonalDataMutation($input: EditCustomerUserPersonalDataInput!) {
-    EditCustomerUserPersonalData(input: $input) {
-        ...SimpleCustomerUserFragment
-    }
-}

@@ -1,4 +1,0 @@
-SellingPriceTypeEnum:
-    type: enum
-    inherits:
-        - 'SellingPriceTypeEnumDecorator'

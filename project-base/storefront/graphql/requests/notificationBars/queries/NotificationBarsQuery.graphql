@@ -1,5 +1,0 @@
-query NotificationBars @redisCache(ttl: 300) {
-    notificationBars {
-        ...NotificationBarsFragment
-    }
-}

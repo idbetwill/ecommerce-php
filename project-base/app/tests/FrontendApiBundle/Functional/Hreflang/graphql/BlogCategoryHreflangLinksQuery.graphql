@@ -1,8 +1,0 @@
-query BlogCategoryHreflangLinksQuery($urlSlug: String!) {
-    blogCategory(urlSlug: $urlSlug) {
-        hreflangLinks{
-            hreflang
-            href
-        }
-    }
-}

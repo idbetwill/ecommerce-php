@@ -1,0 +1,76 @@
+# Rutas del panel de administración
+admin_product_index:
+    path: /admin/products
+    controller: App\Controller\Admin\ProductController::index
+    methods: [GET]
+
+admin_product_new:
+    path: /admin/products/new
+    controller: App\Controller\Admin\ProductController::new
+    methods: [GET, POST]
+
+admin_product_show:
+    path: /admin/products/{id}
+    controller: App\Controller\Admin\ProductController::show
+    methods: [GET]
+    requirements:
+        id: \d+
+
+admin_product_edit:
+    path: /admin/products/{id}/edit
+    controller: App\Controller\Admin\ProductController::edit
+    methods: [GET, POST]
+    requirements:
+        id: \d+
+
+admin_product_delete:
+    path: /admin/products/{id}
+    controller: App\Controller\Admin\ProductController::delete
+    methods: [POST]
+    requirements:
+        id: \d+
+
+admin_product_toggle_featured:
+    path: /admin/products/{id}/toggle-featured
+    controller: App\Controller\Admin\ProductController::toggleFeatured
+    methods: [POST]
+    requirements:
+        id: \d+
+
+admin_category_index:
+    path: /admin/categories
+    controller: App\Controller\Admin\CustomProductCategoryController::index
+    methods: [GET]
+
+admin_category_new:
+    path: /admin/categories/new
+    controller: App\Controller\Admin\CustomProductCategoryController::new
+    methods: [GET, POST]
+
+admin_category_show:
+    path: /admin/categories/{id}
+    controller: App\Controller\Admin\CustomProductCategoryController::show
+    methods: [GET]
+    requirements:
+        id: \d+
+
+admin_category_edit:
+    path: /admin/categories/{id}/edit
+    controller: App\Controller\Admin\CustomProductCategoryController::edit
+    methods: [GET, POST]
+    requirements:
+        id: \d+
+
+admin_category_delete:
+    path: /admin/categories/{id}
+    controller: App\Controller\Admin\CustomProductCategoryController::delete
+    methods: [POST]
+    requirements:
+        id: \d+
+
+admin_category_toggle_active:
+    path: /admin/categories/{id}/toggle-active
+    controller: App\Controller\Admin\CustomProductCategoryController::toggleActive
+    methods: [POST]
+    requirements:
+        id: \d+

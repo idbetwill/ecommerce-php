@@ -1,4 +1,0 @@
-GoPayCreatePaymentSetup:
-    type: object
-    inherits:
-        - 'GoPayCreatePaymentSetupDecorator'

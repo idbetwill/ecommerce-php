@@ -1,4 +1,0 @@
-LoginResult:
-    type: object
-    inherits:
-        - 'LoginResultDecorator'

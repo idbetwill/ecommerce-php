@@ -1,4 +1,0 @@
-PaymentSetupCreationData:
-    type: object
-    inherits:
-        - 'PaymentSetupCreationDataDecorator'

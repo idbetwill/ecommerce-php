@@ -1,4 +1,0 @@
-OrderItemTypeEnum:
-    type: enum
-    inherits:
-        - 'OrderItemTypeEnumDecorator'

@@ -1,0 +1,49 @@
+# Dockerfile optimizado para Railway
+FROM php:8.3-fpm-alpine
+
+# Instalar dependencias del sistema
+RUN apk add --no-cache \
+    git \
+    curl \
+    libpng-dev \
+    libxml2-dev \
+    zip \
+    unzip \
+    postgresql-dev \
+    nodejs \
+    npm
+
+# Instalar extensiones PHP
+RUN docker-php-ext-install pdo pdo_pgsql pdo_mysql mbstring exif pcntl bcmath gd
+
+# Instalar Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+# Establecer directorio de trabajo
+WORKDIR /var/www/html
+
+# Copiar archivos de configuración
+COPY composer.json composer.lock ./
+
+# Instalar dependencias PHP
+RUN composer install --no-dev --optimize-autoloader --no-scripts
+
+# Copiar código fuente
+COPY . .
+
+# Instalar dependencias Node.js y compilar assets
+RUN npm install && npm run build
+
+# Configurar permisos
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html
+
+# Crear directorios necesarios
+RUN mkdir -p var/cache var/log var/sessions web/uploads \
+    && chown -R www-data:www-data var web/uploads
+
+# Exponer puerto
+EXPOSE 8000
+
+# Comando de inicio
+CMD ["php", "-S", "0.0.0.0:8000", "-t", "web"]

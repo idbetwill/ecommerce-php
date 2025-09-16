@@ -1,4 +1,0 @@
-RemoveCustomerUserDataInput:
-    type: input-object
-    inherits:
-        - 'RemoveCustomerUserDataInputDecorator'

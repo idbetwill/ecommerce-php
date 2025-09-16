@@ -1,9 +1,0 @@
-fragment ListedProductConnectionPreviewFragment on ProductConnection {
-    __typename
-    orderingMode
-    defaultOrderingMode
-    productFilterOptions {
-        ...ProductFilterOptionsFragment
-    }
-    totalCount
-}

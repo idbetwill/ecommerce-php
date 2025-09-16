@@ -1,8 +1,0 @@
-fragment SimpleArticleSiteFragment on ArticleSite {
-    __typename
-    uuid
-    name
-    slug
-    placement
-    external
-}

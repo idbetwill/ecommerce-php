@@ -1,4 +1,0 @@
-SeoPage:
-    type: object
-    inherits:
-        - 'SeoPageDecorator'

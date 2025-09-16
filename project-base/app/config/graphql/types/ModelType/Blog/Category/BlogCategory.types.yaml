@@ -1,4 +1,0 @@
-BlogCategory:
-    type: object
-    inherits:
-        - 'BlogCategoryDecorator'

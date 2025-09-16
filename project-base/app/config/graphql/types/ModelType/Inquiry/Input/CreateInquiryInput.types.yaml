@@ -1,4 +1,0 @@
-CreateInquiryInput:
-    type: input-object
-    inherits:
-        - 'CreateInquiryInputDecorator'

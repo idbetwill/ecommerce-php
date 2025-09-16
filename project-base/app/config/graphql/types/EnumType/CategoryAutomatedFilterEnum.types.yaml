@@ -1,4 +1,0 @@
-CategoryAutomatedFilterEnum:
-    type: enum
-    inherits:
-        - 'CategoryAutomatedFilterEnumDecorator'

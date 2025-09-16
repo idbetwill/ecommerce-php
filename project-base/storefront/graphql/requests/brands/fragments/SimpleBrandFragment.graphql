@@ -1,5 +1,0 @@
-fragment SimpleBrandFragment on Brand {
-    __typename
-    name
-    slug
-}

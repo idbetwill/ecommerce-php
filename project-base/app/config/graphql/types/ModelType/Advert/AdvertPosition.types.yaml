@@ -1,4 +1,0 @@
-AdvertPosition:
-    type: object
-    inherits:
-        - 'AdvertPositionDecorator'

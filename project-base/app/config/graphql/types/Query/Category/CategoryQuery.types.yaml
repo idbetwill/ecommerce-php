@@ -1,8 +1,0 @@
-CategoryQuery:
-    type: object
-    config:
-        fields:
-            promotedCategories:
-                type: '[Category!]!'
-                resolve: "@=query('promotedCategoriesQuery')"
-                description: "Returns promoted categories"

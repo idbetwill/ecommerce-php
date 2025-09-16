@@ -1,4 +1,0 @@
-AddOrderItemsToCartInput:
-    type: input-object
-    inherits:
-        - 'AddOrderItemsToCartInputDecorator'

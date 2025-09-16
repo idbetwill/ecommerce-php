@@ -1,7 +1,0 @@
-query RobotsTxtQuery {
-    settings {
-        seo {
-            robotsTxtContent
-        }
-    }
-}

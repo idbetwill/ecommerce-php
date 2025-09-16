@@ -1,4 +1,0 @@
-fragment HreflangLinksFragment on HreflangLink {
-    hreflang
-    href
-}

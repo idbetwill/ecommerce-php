@@ -1,4 +1,0 @@
-LoginTypeEnum:
-    type: enum
-    inherits:
-        - 'LoginTypeEnumDecorator'

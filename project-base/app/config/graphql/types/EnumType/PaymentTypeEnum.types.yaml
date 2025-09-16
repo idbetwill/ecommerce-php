@@ -1,4 +1,0 @@
-PaymentTypeEnum:
-    type: enum
-    inherits:
-        - 'PaymentTypeEnumDecorator'

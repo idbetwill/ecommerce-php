@@ -1,4 +1,0 @@
-BaseCustomerUser:
-    type: interface
-    inherits:
-        - 'BaseCustomerUserDecorator'

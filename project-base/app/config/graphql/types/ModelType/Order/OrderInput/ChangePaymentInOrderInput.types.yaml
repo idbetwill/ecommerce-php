@@ -1,4 +1,0 @@
-ChangePaymentInOrderInput:
-    type: input-object
-    inherits:
-        - 'ChangePaymentInOrderInputDecorator'

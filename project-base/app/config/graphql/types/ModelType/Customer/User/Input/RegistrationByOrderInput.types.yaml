@@ -1,4 +1,0 @@
-RegistrationByOrderInput:
-    type: input-object
-    inherits:
-        - 'RegistrationByOrderInputDecorator'

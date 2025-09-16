@@ -1,4 +1,0 @@
-HreflangLink:
-    type: object
-    inherits:
-        - 'HreflangLinkDecorator'

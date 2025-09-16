@@ -1,4 +1,0 @@
-CustomerUserRoleGroup:
-    type: object
-    inherits:
-        - 'CustomerUserRoleGroupDecorator'

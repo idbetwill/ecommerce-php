@@ -1,4 +1,0 @@
-MainBlogCategoryData:
-    type: object
-    inherits:
-        - 'MainBlogCategoryDataDecorator'

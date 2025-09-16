@@ -1,4 +1,0 @@
-GoPayBankSwift:
-    type: object
-    inherits:
-        - 'GoPayBankSwiftDecorator'

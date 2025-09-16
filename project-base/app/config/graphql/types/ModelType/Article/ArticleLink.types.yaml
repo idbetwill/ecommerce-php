@@ -1,4 +1,0 @@
-ArticleLink:
-    type: object
-    inherits:
-        - 'ArticleLinkDecorator'

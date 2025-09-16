@@ -1,4 +1,0 @@
-CategoryHierarchyItem:
-    type: object
-    inherits:
-        - 'CategoryHierarchyItemDecorator'

@@ -1,5 +1,0 @@
-query SeoPageQuery($pageSlug: String!) {
-    seoPage(pageSlug: $pageSlug) {
-        ...SeoPageFragment
-    }
-}

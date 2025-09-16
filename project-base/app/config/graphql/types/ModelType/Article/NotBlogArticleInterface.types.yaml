@@ -1,4 +1,0 @@
-NotBlogArticleInterface:
-    type: interface
-    inherits:
-        - 'NotBlogArticleInterfaceDecorator'

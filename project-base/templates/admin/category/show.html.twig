@@ -1,0 +1,243 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categoría - {{ category.name }}{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1>{{ category.name }}</h1>
+                <div>
+                    <a href="{{ path('admin_category_edit', {'id': category.id}) }}" class="btn btn-primary me-2">
+                        <i class="fas fa-edit"></i> Editar
+                    </a>
+                    <a href="{{ path('admin_category_index') }}" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left"></i> Volver al Listado
+                    </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Información de la Categoría</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6>Información Básica</h6>
+                                    <table class="table table-sm">
+                                        <tr>
+                                            <td><strong>ID:</strong></td>
+                                            <td>{{ category.id }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Nombre:</strong></td>
+                                            <td>{{ category.name }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Slug:</strong></td>
+                                            <td><code>{{ category.slug }}</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Padre:</strong></td>
+                                            <td>
+                                                {% if category.parent %}
+                                                    <span class="badge bg-info">{{ category.parent.name }}</span>
+                                                {% else %}
+                                                    <span class="text-muted">Categoría raíz</span>
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Orden:</strong></td>
+                                            <td>{{ category.sortOrder }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Estado:</strong></td>
+                                            <td>
+                                                {% if category.isActive %}
+                                                    <span class="badge bg-success">Activa</span>
+                                                {% else %}
+                                                    <span class="badge bg-secondary">Inactiva</span>
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6>Estadísticas</h6>
+                                    <table class="table table-sm">
+                                        <tr>
+                                            <td><strong>Productos:</strong></td>
+                                            <td><span class="badge bg-primary">{{ category.products|length }}</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Subcategorías:</strong></td>
+                                            <td><span class="badge bg-info">{{ category.children|length }}</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Creada:</strong></td>
+                                            <td>{{ category.createdAt|date('d/m/Y H:i') }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Actualizada:</strong></td>
+                                            <td>{{ category.updatedAt|date('d/m/Y H:i') }}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            {% if category.description %}
+                                <h6>Descripción</h6>
+                                <p class="text-muted">{{ category.description }}</p>
+                            {% endif %}
+
+                            {% if category.children|length > 0 %}
+                                <h6>Subcategorías</h6>
+                                <div class="row">
+                                    {% for child in category.children %}
+                                        <div class="col-md-6 mb-2">
+                                            <div class="card">
+                                                <div class="card-body py-2">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div>
+                                                            <strong>{{ child.name }}</strong>
+                                                            <br><small class="text-muted">{{ child.products|length }} productos</small>
+                                                        </div>
+                                                        <div>
+                                                            <a href="{{ path('admin_category_show', {'id': child.id}) }}" 
+                                                               class="btn btn-sm btn-outline-primary">
+                                                                <i class="fas fa-eye"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+
+                            {% if category.products|length > 0 %}
+                                <h6>Productos en esta Categoría</h6>
+                                <div class="table-responsive">
+                                    <table class="table table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Nombre</th>
+                                                <th>SKU</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for product in category.products|slice(0, 10) %}
+                                                <tr>
+                                                    <td>{{ product.id }}</td>
+                                                    <td>{{ product.name }}</td>
+                                                    <td>
+                                                        {% if product.sku %}
+                                                            <span class="badge bg-secondary">{{ product.sku }}</span>
+                                                        {% else %}
+                                                            <span class="text-muted">-</span>
+                                                        {% endif %}
+                                                    </td>
+                                                    <td>
+                                                        <a href="{{ path('admin_product_show', {'id': product.id}) }}" 
+                                                           class="btn btn-sm btn-outline-info">
+                                                            <i class="fas fa-eye"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                {% if category.products|length > 10 %}
+                                    <p class="text-muted small">Mostrando los primeros 10 productos de {{ category.products|length }} total.</p>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    {% if category.metaTitle or category.metaDescription or category.metaKeywords %}
+                        <div class="card mt-4">
+                            <div class="card-header">
+                                <h5 class="mb-0">Información SEO</h5>
+                            </div>
+                            <div class="card-body">
+                                {% if category.metaTitle %}
+                                    <h6>Meta Título</h6>
+                                    <p class="text-muted">{{ category.metaTitle }}</p>
+                                {% endif %}
+
+                                {% if category.metaDescription %}
+                                    <h6>Meta Descripción</h6>
+                                    <p class="text-muted">{{ category.metaDescription }}</p>
+                                {% endif %}
+
+                                {% if category.metaKeywords %}
+                                    <h6>Meta Keywords</h6>
+                                    <p class="text-muted">{{ category.metaKeywords }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Acciones</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-grid gap-2">
+                                <a href="{{ path('admin_category_edit', {'id': category.id}) }}" class="btn btn-primary">
+                                    <i class="fas fa-edit"></i> Editar Categoría
+                                </a>
+                                
+                                <form method="POST" action="{{ path('admin_category_toggle_active', {'id': category.id}) }}" 
+                                      onsubmit="return confirm('¿Cambiar estado de la categoría?')">
+                                    <button type="submit" class="btn btn-warning w-100">
+                                        <i class="fas fa-toggle-{% if category.isActive %}on{% else %}off{% endif %}"></i> 
+                                        {% if category.isActive %}
+                                            Desactivar
+                                        {% else %}
+                                            Activar
+                                        {% endif %}
+                                    </button>
+                                </form>
+
+                                <a href="{{ path('admin_category_index') }}" class="btn btn-outline-secondary">
+                                    <i class="fas fa-list"></i> Ver Todas las Categorías
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mt-3">
+                        <div class="card-header">
+                            <h5 class="mb-0">Eliminar Categoría</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-muted small">
+                                Esta acción no se puede deshacer. La categoría será eliminada permanentemente.
+                            </p>
+                            <form method="POST" action="{{ path('admin_category_delete', {'id': category.id}) }}" 
+                                  onsubmit="return confirm('¿Estás seguro de eliminar esta categoría? Esta acción no se puede deshacer.')">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ category.id) }}">
+                                <button type="submit" class="btn btn-danger w-100">
+                                    <i class="fas fa-trash"></i> Eliminar Categoría
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
